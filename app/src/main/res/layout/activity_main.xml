@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_mu"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/txtUsername"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"/>
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_margin="10dp"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnLoginPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login FB"
+            android:backgroundTint="#1D8819"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/btnRegisterTwitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register Twitter"
+            android:backgroundTint="#0E23DF"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

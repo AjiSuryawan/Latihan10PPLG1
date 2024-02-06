@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Latihan10PPLG1</string>
+    <string-array name="arrrOperator">
+        <item>Tambah</item>
+        <item>Kurang</item>
+        <item>Kali</item>
+        <item>Bagi</item>
+    </string-array>
+
+</resources>
