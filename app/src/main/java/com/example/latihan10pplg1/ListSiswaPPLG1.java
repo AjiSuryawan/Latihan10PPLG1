@@ -12,7 +12,7 @@ import java.util.List;
 public class ListSiswaPPLG1 extends AppCompatActivity {
 
     RecyclerView rvListDataSiswa;
-    List<String> listDataSiswa10PPLG1;
+    List<ModelSiswa> listDataSiswa10PPLG1;
     AdapterListSiswa adapter;
 
     @Override
@@ -22,8 +22,19 @@ public class ListSiswaPPLG1 extends AppCompatActivity {
 
         rvListDataSiswa = findViewById(R.id.rvListData);
         listDataSiswa10PPLG1 = new ArrayList<>();
-        listDataSiswa10PPLG1.add("Nafi");
-        listDataSiswa10PPLG1.add("Aldi");
+        ModelSiswa siswa1 = new ModelSiswa();
+        siswa1.setNama("Royyan");
+        siswa1.setAlamat("Surabaya");
+        siswa1.setNoAbsen("33");
+        siswa1.setImage(R.drawable.logo_mu);
+        listDataSiswa10PPLG1.add(siswa1);
+
+        ModelSiswa siswa2 = new ModelSiswa();
+        siswa2.setNama("Ocean");
+        siswa2.setAlamat("Jogja");
+        siswa2.setNoAbsen("29");
+        siswa2.setImage(R.drawable.logo_mu);
+        listDataSiswa10PPLG1.add(siswa2);
 
         // call adapter data
         rvListDataSiswa.setLayoutManager(new LinearLayoutManager(this));

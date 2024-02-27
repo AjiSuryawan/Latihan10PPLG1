@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,10 +14,10 @@ import java.util.List;
 
 public class AdapterListSiswa extends RecyclerView.Adapter<AdapterListSiswa.ViewHolder>{
 
-    private List<String> mData;
+    private List<ModelSiswa> mData;
     private LayoutInflater mInflater;
 
-    AdapterListSiswa(Context context, List<String> data) {
+    AdapterListSiswa(Context context, List<ModelSiswa> data) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
     }
@@ -31,8 +32,10 @@ public class AdapterListSiswa extends RecyclerView.Adapter<AdapterListSiswa.View
 
     @Override
     public void onBindViewHolder(@NonNull AdapterListSiswa.ViewHolder holder, int position) {
-        String namaSiswa = mData.get(position);
-        holder.myTextView.setText(namaSiswa);
+        ModelSiswa dataSiswa = mData.get(position);
+        holder.tvName.setText(dataSiswa.getNama());
+        holder.tvAlamat.setText(dataSiswa.getAlamat());
+        holder.profilePicture.setImageResource(dataSiswa.getImage());
     }
 
     @Override
@@ -41,12 +44,16 @@ public class AdapterListSiswa extends RecyclerView.Adapter<AdapterListSiswa.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView myTextView;
+        TextView tvName;
+        TextView tvAlamat;
+        ImageView profilePicture;
 
 
         ViewHolder(View itemView) {
             super(itemView);
-            myTextView = itemView.findViewById(R.id.tvName);
+            tvName = itemView.findViewById(R.id.tvName);
+            tvAlamat = itemView.findViewById(R.id.tvAlamat);
+            profilePicture = itemView.findViewById(R.id.ivProfilePicture);
             itemView.setOnClickListener(this);
         }
 
