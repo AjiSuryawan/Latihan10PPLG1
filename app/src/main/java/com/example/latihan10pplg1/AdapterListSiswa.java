@@ -16,6 +16,7 @@ public class AdapterListSiswa extends RecyclerView.Adapter<AdapterListSiswa.View
 
     private List<ModelSiswa> mData;
     private LayoutInflater mInflater;
+    private ItemClickListener mClickListener;
 
     AdapterListSiswa(Context context, List<ModelSiswa> data) {
         this.mInflater = LayoutInflater.from(context);
@@ -59,17 +60,18 @@ public class AdapterListSiswa extends RecyclerView.Adapter<AdapterListSiswa.View
 
         @Override
         public void onClick(View view) {
-
+            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
         }
     }
 
     // convenience method for getting data at click position
-    String getItem(int id) {
-        return  "";
+    ModelSiswa getItem(int id) {
+        return mData.get(id);
     }
 
     // allows clicks events to be caught
     void setClickListener(ItemClickListener itemClickListener) {
+        this.mClickListener = itemClickListener;
     }
 
     // parent activity will implement this method to respond to click events

@@ -5,11 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListSiswaPPLG1 extends AppCompatActivity {
+public class ListSiswaPPLG1 extends AppCompatActivity implements AdapterListSiswa.ItemClickListener {
 
     RecyclerView rvListDataSiswa;
     List<ModelSiswa> listDataSiswa10PPLG1;
@@ -36,11 +38,25 @@ public class ListSiswaPPLG1 extends AppCompatActivity {
         siswa2.setImage(R.drawable.logo_mu);
         listDataSiswa10PPLG1.add(siswa2);
 
+        ModelSiswa siswa3 = new ModelSiswa();
+        siswa3.setNama("Rizal");
+        siswa3.setAlamat("Sumbawa");
+        siswa3.setNoAbsen("23");
+        siswa3.setImage(R.drawable.logo_mu);
+        listDataSiswa10PPLG1.add(siswa3);
+
         // call adapter data
         rvListDataSiswa.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterListSiswa(this, listDataSiswa10PPLG1);
+        adapter.setClickListener(this);
         rvListDataSiswa.setAdapter(adapter);
 
 
+
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        Toast.makeText(this, listDataSiswa10PPLG1.get(position).getNama(), Toast.LENGTH_SHORT).show();
     }
 }
